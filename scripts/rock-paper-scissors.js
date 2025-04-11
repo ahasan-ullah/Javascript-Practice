@@ -17,6 +17,8 @@ updateScoreElement();
 // }
 
 
+
+
 function playGame(playerMove){
   const computerMove=pickComputerMove();
   let result='';
