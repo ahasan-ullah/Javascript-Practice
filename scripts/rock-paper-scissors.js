@@ -22,7 +22,11 @@ function autoPlay(){
   let autoPlayBtn=document.querySelector('.auto-play-button');
   if(!isAutoPlay){
     autoPlayBtn.innerText='Reset'
-    intervalId=setInterval(function(){
+    // intervalId=setInterval(function(){
+    //   const playerMove=pickComputerMove();
+    //   playGame(playerMove);
+    // },1000);
+    intervalId=setInterval(()=>{
       const playerMove=pickComputerMove();
       playGame(playerMove);
     },1000);
