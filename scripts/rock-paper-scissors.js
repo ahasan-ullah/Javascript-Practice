@@ -1,3 +1,17 @@
+document.querySelector('.js-rock-button').addEventListener('click',()=>{
+  playGame('rock')
+});
+
+document.querySelector('.js-paper-button').addEventListener('click',()=>{
+  playGame('paper')
+});
+
+document.querySelector('.js-scissor-button').addEventListener('click',()=>{
+  playGame('scissors')
+});
+
+
+
 let score=JSON.parse(localStorage.getItem('score')) || {
   wins: 0,
   losses: 0,
