@@ -16,11 +16,23 @@ updateScoreElement();
 //   }
 // }
 
+let isAutoPlay=false;
+let intervalId;
 function autoPlay(){
-  setInterval(function(){
-    const playerMove=pickComputerMove();
-    playGame(playerMove);
-  },1000)
+  let autoPlayBtn=document.querySelector('.auto-play-button');
+  if(!isAutoPlay){
+    autoPlayBtn.innerText='Reset'
+    intervalId=setInterval(function(){
+      const playerMove=pickComputerMove();
+      playGame(playerMove);
+    },1000);
+    isAutoPlay=true;
+  }
+  else{
+    clearInterval(intervalId);
+    isAutoPlay=false;
+    autoPlayBtn.innerText='Auto Play';
+  }
 }
 
 
