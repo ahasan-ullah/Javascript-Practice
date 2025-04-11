@@ -31,15 +31,23 @@ function renderTodoList() {
     const {name,dueDate}=todoObject;
     const html = `<div>${name}</div>
                   <div>${dueDate}</div>
-                  <button class="delete-todo-button" onclick="
-                    todoList.splice(${index},1);
-                    renderTodoList();
-                  ">Delete</button>`;
+                  <button class="delete-todo-button js-delete-todo-button">Delete</button>`;
       todoListHTML += html;
   })
 
   document.querySelector(".js-todo-list").innerHTML = todoListHTML;
+
+  document.querySelectorAll('.delete-todo-button').forEach((deleteBtn,index)=>{
+    deleteBtn.addEventListener('click',()=>{
+      todoList.splice(index,1);
+      renderTodoList();
+    })
+  })
 }
+
+document.querySelector('.js-add-todo-button').addEventListener('click',()=>{
+  addTodo();
+})
 
 function addTodo() {
   const inputElement = document.querySelector(".js-name-input");
