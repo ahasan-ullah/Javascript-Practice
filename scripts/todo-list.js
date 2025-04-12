@@ -32,7 +32,7 @@ function renderTodoList() {
     const html = `<div>${name}</div>
                   <div>${dueDate}</div>
                   <button class="delete-todo-button js-delete-todo-button">Delete</button>`;
-      todoListHTML += html;
+    todoListHTML += html;
   })
 
   document.querySelector(".js-todo-list").innerHTML = todoListHTML;
